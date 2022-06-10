@@ -12,7 +12,6 @@
 //                 break;
 //             }
 //             res.push(s[j]);
-
 //         }
 //         j++
 //         i = j
@@ -24,7 +23,7 @@
 // console.log(uncompress("2c3a1t")) // "ccaaat"
 // console.log(uncompress("4s2b")) // 'ssssbb'
 // console.log(uncompress("2p1o5p")) // 'ppoppppp'
-// console.log(uncompress("10y")) // 'yyyyyyyyyyyyyyyyyyyyyyyyy'
+// console.log(uncompress("25y")) // 'yyyyyyyyyyyyyyyyyyyyyyyyy'
 
 // Smaller Time Complexity
 
@@ -41,8 +40,8 @@ const uncompress = (s) => {
         }
 
         else {
-            var num = s.slice(i, j)
-            for (count = 0; count < num; count++) {
+            var num = Number(s.slice(i, j))
+            for (let count = 0; count < num; count++) {
                 result.push(s[j])
             }
             j++
