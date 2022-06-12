@@ -1,37 +1,28 @@
 const anagrams = (s1, s2) => {
-    let count = {}
-
-    for (let char in s1) {
-        // iterate through the keys
-        // then set key to 0
-        // if found, we increment count object key
+    const count = {};
+    for (let char of s1) {
         if (!(char in count)) {
             count[char] = 0
         }
         count[char] += 1;
     }
-    // iterate over property values
-    // if not found, return false
-    // if found, decrement object key so a:1-1=0 => a:0, b:1, c:1
+
     for (let char of s2) {
-        if (char === null) {
-            return false
+        if (count[char] === undefined) {
+            return false;
         }
         else {
-            count[char] -= 1
+            count[char] -= 1;
         }
     }
 
-    //still have to loop through object
-    // if the keys don't equal 0, then its false. All keys should equal zero.
     for (let char in count) {
-        if (count[char] != 0) {
+        if (count[char] !== 0) {
             return false;
         }
     }
 
     return true;
-
 };
 
 console.log(anagrams('restful', 'fluster')); // true
