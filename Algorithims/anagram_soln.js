@@ -1,6 +1,8 @@
 const anagrams = (s1, s2) => {
     const count = {};
+    // "of" counts keys
     for (let char of s1) {
+        // "in counts values"
         if (!(char in count)) {
             count[char] = 0
         }
