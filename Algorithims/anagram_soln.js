@@ -1,8 +1,8 @@
 const anagrams = (s1, s2) => {
     const count = {};
-    // "of" counts keys
+    //for..of iterates over the values of an iterable object (arrays, strings, nodeList)    
     for (let char of s1) {
-        // "in counts values"
+        // for..in iterates over all enumerable property keys of an object
         if (!(char in count)) {
             count[char] = 0
         }
